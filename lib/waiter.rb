@@ -40,6 +40,6 @@ class Waiter
   end
   
   def most_frequent_customer
-    most_frequent = meals.
+    
   end
 end
