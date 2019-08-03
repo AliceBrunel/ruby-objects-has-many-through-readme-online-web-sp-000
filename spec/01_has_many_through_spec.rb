@@ -215,18 +215,22 @@ describe "Object relationships" do
       end
     end
     
-    describe "#most_frequent" do
+    describe "#most_frequent_customer" do
       it "returns the Customer instance that is the most frequent" do
         howard = Customer.new("Howard", 30)
         daniel = Customer.new("Daniel", 30)
         lisa = Customer.new("Lisa", 27)
         
+        terrance = Waiter.new("Terrance", 1)
         
         howard.new_meal(terrance, 15, 2)
         daniel.new_meal(terrance, 15, 4)
         lisa.new_meal(terrance, 15, 5)
+        daniel.new_meal(terrance, 15, 4)
+        lisa.new_meal(terrance, 15, 5)
+        lisa.new_meal(terrance, 15, 5)
 
-        expect(terrance.worst_tipper).to eq(josh)
+        expect(terrance.most_frequent_customer).to eq(lisa)
       end
     end
         
