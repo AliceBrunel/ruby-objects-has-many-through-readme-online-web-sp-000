@@ -40,6 +40,8 @@ class Waiter
   end
   
   def most_frequent_customer
-    
+    Meal.all.select do |meal|
+      meal.waiter == self && meal.customer
+    end
   end
 end
