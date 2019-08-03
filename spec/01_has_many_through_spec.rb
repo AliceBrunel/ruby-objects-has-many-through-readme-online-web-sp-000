@@ -194,8 +194,9 @@ describe "Object relationships" do
         expect(terrance.best_tipper).to eq(lisa)
       end
     end
+    
     describe "#worst_tipper" do
-      it "returns the Customer instance associated with the meal that received the minimal tip" do
+      it "returns the Customer instance associated with the meal that received the smallest tip" do
         howard = Customer.new("Howard", 30)
         daniel = Customer.new("Daniel", 30)
         lisa = Customer.new("Lisa", 27)
@@ -213,5 +214,6 @@ describe "Object relationships" do
         expect(terrance.worst_tipper).to eq(josh)
       end
     end
+    
   end
 end
