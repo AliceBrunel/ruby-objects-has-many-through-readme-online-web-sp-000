@@ -41,7 +41,7 @@ class Waiter
   
   def most_frequent_customer
     meals.each do |meal|
-      meal.customer
+      meal.customer.name
     end
   end
 end
