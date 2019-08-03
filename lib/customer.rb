@@ -50,7 +50,7 @@ class Customer
     oldest_customer
   end
   
-  def most_frequent_customer
+  def self.most_frequent_customer
     arr = []
     meals.each do |meal|
       arr << meal.customer.name
