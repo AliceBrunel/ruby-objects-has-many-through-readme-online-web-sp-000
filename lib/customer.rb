@@ -53,7 +53,7 @@ class Customer
   def most_frequent_customer
     arr = []
     meals.each do |meal|
-      arr << meal.customer.name
+      arr << meal.customer
     end
     most_freq = arr.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
     arr.max_by { |v| most_freq[v] }
